@@ -6,7 +6,6 @@ import processing.core.PApplet;
 import rita.RiLexicon;
 import rita.RiTa;
 import rita.support.*;
-import sun.tools.tree.LengthExpression;
 
 public class LexiconLookup {
   

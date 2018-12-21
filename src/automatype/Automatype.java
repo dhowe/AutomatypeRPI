@@ -15,7 +15,7 @@ import automatype.net.MulticastListener;
 
 public class Automatype extends PApplet implements TransformConstants, MulticastListener
 {
-  static String VERSION = "49";
+  static String VERSION = "69";
   static String OS = System.getProperty("os.name");
   static String FONT = "Courier", NET_IF = "etho0";
   static float[] WHITE = {255,245,245,255};
@@ -34,7 +34,7 @@ public class Automatype extends PApplet implements TransformConstants, Multicast
   static int id=1, cellW, cellH, GRID_X_OFF, gridYoff;
   static LexiconLookup lexLook;
   static long lastNetworkUpdate;
-  public static boolean autoMode = false;
+  public static boolean autoMode = true;
 
   ///////////////////////////////////////////////////
 
@@ -461,7 +461,7 @@ public class Automatype extends PApplet implements TransformConstants, Multicast
     //System.out.println("Test Ok?"+getBestIpAddress().equals(getIpAddress("en0")));
     System.out.println("[INFO] "+System.getProperty("user.dir"));
     if (OS.startsWith("Mac"))  
-      args = new String[] { "-ng", "-np", "-nfs", "-net","-i2", "-noip", "-cffffff" };
+      args = new String[] { "-ng", "-np", "-nfs", "-nnet","-i2", "-noip", "-cffffff" };
     
     if (args != null) parseOpts(args);
     
