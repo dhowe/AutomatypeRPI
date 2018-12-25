@@ -37,7 +37,7 @@ class WordTransformCell implements TransformConstants
     this.target = new RiText(p);
     this.target.fill(0, 0, 0, SHOW_TARGETS ? 30 : 0);
     this.bg = new RiText(p);
-    bg.fill(Automatype.WHITE); // hack for bg fades
+    bg.fill(Automatype.BG_COL); // hack for bg fades
     
     if (parent.autoMode) {
       setAutoMode(true);
@@ -99,13 +99,13 @@ class WordTransformCell implements TransformConstants
     
     int k = 1+((id + 4) % 9);
     bg.fill(k * 10, k * 6, k * 3);
-    word.fill(Automatype.WHITE[0],Automatype.WHITE[1],Automatype.WHITE[2],Automatype.WHITE[3]);
+    word.fill(Automatype.BG_COL[0],Automatype.BG_COL[1],Automatype.BG_COL[2],Automatype.BG_COL[3]);
 
     //Automatype1.type.play();
     Automatype.bell.play();
     
     if (Automatype.GRADIENTS) {
-      bg.fadeColor(Automatype.WHITE, SUCCESS_PAUSE);
+      bg.fadeColor(Automatype.BG_COL, SUCCESS_PAUSE);
       word.fadeColor(0, SUCCESS_PAUSE);
     }
     else {
@@ -117,7 +117,7 @@ class WordTransformCell implements TransformConstants
         {
             public void run() {
               word.fill(0); 
-              bg.fill(Automatype.WHITE[0],Automatype.WHITE[1],Automatype.WHITE[2],Automatype.WHITE[3]);
+              bg.fill(Automatype.BG_COL[0],Automatype.BG_COL[1],Automatype.BG_COL[2],Automatype.BG_COL[3]);
             }
         },
         (long) ((SUCCESS_PAUSE*1000)),TimeUnit.MILLISECONDS);
@@ -341,15 +341,6 @@ class WordTransformCell implements TransformConstants
   private PApplet getPApplet()
   {
     return word.getPApplet();
-  }
-  
-  public static void main(String[] args)
-  { 
-    for (int j = 0; j < 9; j++)
-    {
-      int k = 1+((j + 4) % 9);  
-      System.out.println(k);
-    }
   }
 
 }// end
