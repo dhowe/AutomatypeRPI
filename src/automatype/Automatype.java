@@ -13,7 +13,7 @@ import automatype.Sample.Type;
 public class Automatype extends PApplet implements TransformConstants {
 	
 	static final long serialVersionUID = -573360371865032933L;
-	static String VERSION = "69";
+	static String VERSION = "71";
 	static String OS = System.getProperty("os.name");
 	static String FONT = "Courier", NET_IF = "etho0";
 	static float[] BG_COL = { 137,172,198, 255 };
