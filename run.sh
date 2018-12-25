@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# from one jar and loose classes
+# from two jars and loose classes
 java -Xmx64m -cp "bin:lib/core.jar:lib/support.zip" automatype.Automatype $@
 
 

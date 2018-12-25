@@ -16,8 +16,8 @@ public class Automatype extends PApplet implements TransformConstants {
 	static String VERSION = "69";
 	static String OS = System.getProperty("os.name");
 	static String FONT = "Courier", NET_IF = "etho0";
-	static float[] BG_COL = { 255, 245, 245, 255 };
-	static float[] HIT_COL = { 0, 0, 0 };
+	static float[] BG_COL = { 137,172,198, 255 };
+	static float[] HIT_COL = { 76,87,96 };
 	static boolean USE_NETWORK = true;
 	static boolean BORDERED = false;
 	static boolean GRADIENTS = false;
@@ -240,17 +240,12 @@ public class Automatype extends PApplet implements TransformConstants {
 		for (int i = 0; i < args.length; i++) {
 			if (args[i].equals("-b")) {
 				BORDERED = true;
-			} else if (args[i].startsWith("-c")) {
+			} else if (args[i].startsWith("-b")) {
 				String hex = args[i].substring(2).trim();
 				int[] col = unpack(unhex(hex));
 				BG_COL = new float[] { col[1], col[2], col[3], 255 };
 			}
-			/*
-			 * else if (args[i].startsWith("-c")) { String hex =
-			 * args[i].substring(2).trim(); int[] col = unpack(unhex(hex));
-			 * FLASH_COLOR = new float[] { col[1], col[2], col[3] }; }
-			 */
-			else if (args[i].startsWith("-c")) {
+			else if (args[i].startsWith("-h")) {
 				String hex = args[i].substring(2).trim();
 				int[] col = unpack(unhex(hex));
 				HIT_COL = new float[] { col[1], col[2], col[3] };
@@ -288,7 +283,6 @@ public class Automatype extends PApplet implements TransformConstants {
 		}
 
 		System.out.println("[OPTS] Id#=" + id);
-		//System.out.println("[OPTS] IdFromIP=" + ID_FROM_IP);
 		System.out.println("[OPTS] Gradients=" + GRADIENTS);
 		System.out.println("[OPTS] Production=" + PRODUCTION);
 		System.out.println("[OPTS] BgCol=" + RiTa.asList(BG_COL));
@@ -305,8 +299,8 @@ public class Automatype extends PApplet implements TransformConstants {
 		// System.out.println("Test Ok?"+getBestIpAddress().equals(getIpAddress("en0")));
 		System.out.println("[INFO] " + System.getProperty("user.dir"));
 		if (OS.startsWith("Mac"))
-			args = new String[] { "-ng", "-np", "-nfs", "-nnet", "-i2",
-					"-noip", "-cffffff" };
+			args = new String[] { "-g", "-np", "-nfs", "-nnet", "-i2",
+					"-noip" };// "-cffffff" };
 
 		if (args != null)
 			parseOpts(args);

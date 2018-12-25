@@ -94,11 +94,9 @@ class WordTransformCell implements TransformConstants
     firstWord = false;
     target.setText(""); // empty
 
-    //bg.fill(Automatype.FLASH_COLOR);
-    //System.out.println("fill: "+(id + 1) * 10+","+ (id + 1) * 6+","+ (id + 1) * 3);
-    
-    int k = 1+((id + 4) % 9);
-    bg.fill(k * 10, k * 6, k * 3);
+    //int k = 1+((id + 4) % 9);
+    //bg.fill(k * 10, k * 6, k * 3);
+    bg.fill(Automatype.HIT_COL[0],Automatype.HIT_COL[1],Automatype.HIT_COL[2]);
     word.fill(Automatype.BG_COL[0],Automatype.BG_COL[1],Automatype.BG_COL[2],Automatype.BG_COL[3]);
 
     //Automatype1.type.play();
